@@ -3,14 +3,12 @@
 @use "./components" as *;
 @use "./layout" as *;
 @use "./pages" as *;
-@use "./themes" as *;
+// @use "./themes/" as *;
 // @use "./vendors/" as *;
 
-//GLOBAL_STYLES
+// Global styles
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: getColor("bg-color");
-  color: getColor("text-color");
+  background-color: getColor("nt-10");
 
   .container {
     width: 95%;
@@ -26,55 +24,79 @@ body {
     }
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Roboto", sans-serif;
+  }
+
+  // xs
   p {
-    font-size: getFontSize(400);
-    font-weight: 300;
-    line-height: 24px;
+    @include text(300);
+    font-family: "Open Sans", sans-serif;
+    color: getColor("nt-2");
   }
 
   a {
-    font-size: getFontSize(400);
-    color: getColor();
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 0.05rem;
-    }
+    @include text(300);
+    font-family: "Open Sans", sans-serif;
+    color: getColor("nt-2");
   }
 
   h1 {
-    font-size: getFontSize(1100);
-    color: getColor("heading-1-color");
-    font-weight: 900;
-    text-transform: capitalize;
+    @include text(1000);
+    color: getColor("nt-2");
   }
 
   h2 {
-    font-size: getFontSize(900);
-    color: getColor("heading-2-color");
-    font-weight: 900;
-    text-transform: capitalize;
+    @include text(800);
+    color: getColor("nt-2");
   }
 
   h3 {
-    font-size: getFontSize(800);
-    color: getColor("heading-3-color");
-    font-weight: 900;
-    text-transform: capitalize;
+    @include text(700);
+    color: getColor("nt-2");
   }
 
   h4 {
-    font-size: getFontSize(700);
-    color: getColor("heading-4-color");
-    font-weight: 900;
-    text-transform: capitalize;
+    @include text(600);
+    color: getColor("nt-2");
   }
 
   h5 {
-    font-size: getFontSize(600);
-    color: getColor("heading-5-color");
-    font-weight: 900;
-    text-transform: capitalize;
+    @include text(500);
+    color: getColor("nt-2");
+  }
+
+  @include md {
+    p {
+      @include text(400);
+    }
+
+    a {
+      @include text(400);
+    }
+
+    h1 {
+      @include text(1100);
+    }
+
+    h2 {
+      @include text(900);
+    }
+
+    h3 {
+      @include text(800);
+    }
+
+    h4 {
+      @include text(700);
+    }
+
+    h5 {
+      @include text(600);
+    }
   }
 }

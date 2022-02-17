@@ -2,18 +2,8 @@
 @use "../base/typography" as *;
 
 // colors
-@function getMainColor($color: "clr-red-dark") {
-  @return map-get($main-colors-palette, $color);
-}
-
-// dark theme (by default)
 @function getColor($color: "text-color") {
   @return map-get($color-palette-1, $color);
-}
-
-// light theme
-@function getLightThemeColor($color: "text-color") {
-  @return map-get($color-palette-2, $color);
 }
 
 // typography
